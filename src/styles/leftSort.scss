@@ -1,0 +1,127 @@
+.left-sort {
+    padding: 15px;
+    background: #ffffff;
+    font-size: 12px;
+    width: 230px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: fixed;
+    flex-grow: 1;
+    box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
+}
+
+.left-sort__title {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.left-sort__currency {
+    &-list {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+    }
+
+    &-item {
+        flex-grow: 1;
+        text-align: center;
+        padding: 12px 0;
+        text-transform: uppercase;
+        border: 1px solid #D2D5D6;
+        border-collapse: collapse;
+        color: #2196F3;
+        margin-right: -1px;
+        flex-basis: 0%;
+        transition: .3s ease-out;
+
+        &:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        &:hover:not(._active) {
+            cursor: pointer;
+            position: relative;
+            background: #F2FCFF;
+            border-color: #64B5F5;
+        }
+    }
+
+    ._active {
+        background: #2196F3;
+        border-color: #2196F3;
+        color: #ffffff;
+    }
+}
+
+.flights-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 0 -15px;
+    cursor: pointer;    
+    transition: .3s ease-out;
+
+    &:hover {
+        background: #F1FCFF;
+    }
+
+    &:hover &__only {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__check {
+        display: block;
+        width: 100%;
+
+        input {
+            display: none;
+        }
+
+        &-pseudo {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #D2D5D6;
+            border-radius: 3px;
+            margin-right: 10px;
+            background-color: transparent;
+            background-image: url('../images/check.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 200%;
+            transition: .3s ease-out;
+        }
+        
+        & input[type="checkbox"]:checked + &-pseudo {
+            background-color: #F2FCFF;
+            border-color: #2196F3;
+            background-position: 50% 50%;
+        }
+    }
+
+    &__only {
+        position: absolute;
+        right: 15px;
+        font-size: 11px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #2196F3;
+        text-transform: uppercase;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        transition: .3s ease-out;
+
+        &:hover {
+            color: rgb(33, 107, 243);
+        }
+        
+    }
+
+}

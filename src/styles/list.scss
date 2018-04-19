@@ -1,0 +1,134 @@
+.tickets {
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-left: 250px;
+}
+
+.ticket-item {
+    background: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    box-shadow: 0 1px 4px 0 rgba(91, 137, 164, 0.25);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__left {
+        max-width: 200px;
+        width: 100%;
+        padding: 25px 20px;
+        border-right: 1px solid #eceff1;
+        box-sizing: border-box;
+
+        &-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &-btn {
+            padding: 6px 0px;
+            width: 160px;
+            color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+            background: #ff6d00;
+            transition: background .3s ease-out;
+            cursor: pointer;
+            
+            &:hover {
+                background: #ff8124;
+            }
+        }
+
+        .rub::after {
+            content: "\20BD";
+            display: inline-block;
+        }
+
+        .eur::before {
+            content: "\20AC";
+            display: inline-block;
+        }
+
+        .usd::before {
+            content: "$";
+            display: inline-block;
+        }
+    }
+
+    &__right {
+        padding: 25px;
+        width: 100%;
+
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-stops {
+            text-transform: uppercase;
+            font-size: 10px;
+            text-align: center;
+            color: #8b9497;
+            padding: 0 20px;
+            align-self: flex-end;
+        }
+
+        &-time {
+            font-size: 32px;
+            line-height: 32px;
+            color: #4a4a4a;
+        }
+
+        &-date {
+            color: #8b9497;
+        }
+
+        &-city {
+            color: #4a4a4a;
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 12px;
+            margin-top: 10px;
+
+            &--right {
+                text-align: right;
+            }
+        }
+
+        &-line {
+            position: relative;
+            width: 96px;
+            height: 14px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: #d2d5d6;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translate(100%, -50%);
+                width: 13px;
+                height: 13px;
+                background: url('../images/air.svg') no-repeat center;;
+            }
+        }
+    }
+}
